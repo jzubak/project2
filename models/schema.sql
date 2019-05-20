@@ -1,8 +1,3 @@
-DROP DATABASE IF EXISTS hygge;
+Drop Database hygge;
 CREATE DATABASE hygge;
 
-DROP TABLE IF EXISTS users;
-CREATE TABLE users;
-
-DROP TABLE IF EXISTS quiz_answers;
-CREATE TABLE quiz_answers;
