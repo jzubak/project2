@@ -4,30 +4,143 @@
       <div class="col-8 offset-2">
         <h1>{{msg}}</h1>
         <h2>This is our Home Page!</h2>
+        
         <form class="clearfix mb-4" action="POST">
           <div class="form-group">
-            <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
+            <label for="example-text">UserName</label>
+            <input type="text" id="userName" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
           </div>
-          <div class="form-group">
-            <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
-          </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
+          <button id="userNameSubmit" class="btn btn-primary float-right">Submit</button>
         </form>
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
+
+    {{!-- hopefully "Pick a User" will happen automatically when someone is authenticated i.e., logged in. 
+    I just needed to set it up this way for now so i could test that the foreign key's on the databases were working" --}}
+    <h3><strong>Pick a User</strong></h3>
+    <select class="chosen-select" id="user">
+    <option value=""></option>
+
+    {{!-- User information is the first thing that is loaded with this page, which is what would happen with the authentication,
+    so here this.id is the id that is tied in to the "Pick a Quiz" table. --}}
+    {{#each User}}
+    <option value={{this.id}}>{{this.id}} - {{this.Username}} </option>
+    {{/each}}
+    </select>
+   
+
+    <br><br>
+    {{!-- the #room id is how we get the value for the Quizname line in our DB index.js line 26  --}}
+    <h3><strong>Pick a Quiz</strong></h3>
+    <select class="chosen-select" id="room">
+    <option value=""></option>
+    <option value="bed room">bed room</option>
+    <option value="living room">living room</option>
+    <option value="kitchen">kitchen</option>
+    <option value="bathroom">bathroom</option>
+    </select>
+    <br><br><br>
+
+    {{!-- these questions are dumb, but the over all gist is you'll use id's like #q1, #q2, #q3 etc for each page of questions
+    the values of those questions are being gathered and stored at index.js line 49 --}}
+    <h1>Questions</h1>
+    <h3><strong>Question 1</strong></h3>
+    <h4>What color do you like?</h4>
+    <select class="chosen-select" id="q1">
+      <option value=""></option>
+      <option value="1">red</option>
+      <option value="2">blue</option>
+      <option value="3">green</option>
+      <option value="4">yellow</option>
+      <option value="5">orange</option>
+    </select>
+    <br><br>
+    <h3><strong>Question 2</strong></h3>
+    <h4>How big is that color?</h4>
+    <select class="chosen-select" id="q2">
+      <option value=""></option>
+      <option value="1">small</option>
+      <option value="2">medium small/option>
+      <option value="3">medium</option>
+      <option value="4">medium big</option>
+      <option value="5">big</option>
+    </select>
+    <br><br>
+    <h3><strong>Question 3</strong></h3>
+    <h4>Do you like patterns?</h4>
+    <select class="chosen-select" id="q3">
+      <option value=""></option>
+      <option value="1">ya</option>
+      <option value="2">uh huh</option>
+      <option value="3">sure</option>
+      <option value="4">duh</option>
+      <option value="5">nah</option>
+    </select>
+    <br><br>
+    <h3><strong>Question 4</strong></h3>
+    <h4>What Patterns do you like?</h4>
+    <select class="chosen-select" id="q4">
+      <option value=""></option>
+      <option value="1">crazy</option>
+      <option value="2">wild</option>
+      <option value="3">calm</option>
+      <option value="4">soothing</option>
+      <option value="5">yea</option>
+    </select>
+    <br><br>
+    <h3><strong>Question 5</strong></h3>
+    <h4>Did you brush your teeth today?</h4>
+    <select class="chosen-select" id="q5">
+      <option value=""></option>
+      <option value="1">after every meal</option>
+      <option value="2">twice a day</option>
+      <option value="3">once a day</option>
+      <option value="4">every other day</option>
+      <option value="5">whenever i feel like it</option>
+    </select>
+    <br><br>
+    <h3><strong>Question 6</strong></h3>
+    <h4>Whats your favorite scented candle scent?</h4>
+    <select class="chosen-select" id="q6">
+      <option value=""></option>
+      <option value="1">lemon grass</option>
+      <option value="2">ocean mist</option>
+      <option value="3">dirty socks</option>
+      <option value="4">allagator skin</option>
+      <option value="5">roses</option>
+    </select>
+    <br><br>
+    <h3><strong>Question 7</strong></h3>
+    <h4>How good are you at reading?</h4>
+    <select class="chosen-select" id="q7">
+      <option value=""></option>
+      <option value="1">1 (not the best)</option>
+      <option value="2">2</option>
+      <option value="3">3 (i finish a book a few times a year)</option>
+      <option value="4">4</option>
+      <option value="5">5 (reading is what its all about)</option>
+    </select>
+    <br><br>
+    <h3><strong>Question 8</strong></h3>
+    <h4>How much wood could a wood chuck chuck?</h4>
+    <select class="chosen-select" id="q8">
+      <option value=""></option>
+      <option value="1">a lot</option>
+      <option value="2">a little</option>
+      <option value="3">who knows</option>
+      <option value="4">writing sample questions is harder then it seems</option>
+      <option value="5">all done!</option>
+    </select>
         </ul>
+        <br><br>
+
+    <!-- Id #quizSubmit is used to trigger the onclick that makes the .post to the DB -->
+    <button type="submit" class="btn btn-primary btn-lg btn-block" id="quizSubmit">
+      <i class="fa fa-check-circle" aria-hidden="true"></i>Submit</button>
       </div>
+    
     </div>
   </div>
 </div>
+
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>

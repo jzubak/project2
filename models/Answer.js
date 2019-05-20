@@ -10,9 +10,10 @@ module.exports = function(sequelize, DataTypes) {
         Q8: DataTypes.INTEGER,
     });
     Answer.associate = function(models) {
-        // Associating Author with Posts
-        // When an Author is deleted, also delete any associated Posts
-        Answer.belongsTo(models.Quiz, {
+        Answer.belongsTo(models.Quiz, {  
+            foreignKey: {
+            allowNull: false
+          }
         });
       };
       return Answer;
