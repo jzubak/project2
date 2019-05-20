@@ -1,5 +1,7 @@
 var db = require("../models");
 
+
+
 module.exports = function(app) {
   // Get all examples
   app.get("/api/examples", function(req, res) {
@@ -14,6 +16,8 @@ module.exports = function(app) {
       res.json(dbExample);
     });
   });
+
+  //update? 
 
   // Delete an example by id
   app.delete("/api/examples/:id", function(req, res) {
