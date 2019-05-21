@@ -1,31 +1,16 @@
-
 $(document).ready(function() {
-console.log(req.user.id)
-// console.log(quiz)
-  //Adding a user to the database 
-  $("#userNameSubmit").on("click", function(event) {
-    event.preventDefault()
-
-    console.log('in the user name submit click event')
-
-    var newUser = {
-      Username: $("#userName").val().trim()
-      };
-    
-    $.post("/api/user", newUser, function(data) {
-          location.reload();
-        
-    });
-  })
+  //this bit will get the userId from the URL so we can use it in our DB
+  var urlParams = new URLSearchParams(window.location.search);
+  var userId = urlParams.get('userId')
 
   $("#quizSubmit").on("click", function(event) {
     console.log('in the quiz submit click event')
     event.preventDefault()
     var quiz = {
       Quizname: $("#room").val(),
-      UserId: $("#user").val()
+      UserId: userId //the userID from above
     }
-
+    // console.log(req.query)
     $.post("/api/quiz", quiz,  function(data) {
         postAnswers(data.id)
     });  
@@ -42,7 +27,7 @@ console.log(req.user.id)
     Q6: $("#q6").val(),
     Q7: $("#q7").val(),
     Q8: $("#q8").val(),
-    // QuizId: str
+    QuizId: str
     };
   $.post("/api/answer", answers, function(data) {
 
