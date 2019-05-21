@@ -18,7 +18,6 @@ app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
 // Handlebars
-// app.set('views', './views') <-- maybe important
 app.engine(
   "handlebars",
   exphbs({
@@ -26,12 +25,6 @@ app.engine(
   })
 );
 app.set("view engine", "handlebars");
-
-// app.get('/', function(req, res) {
- 
-//   res.send('Welcome to HYGGE');
-
-// }); <-- maybe important for later 
 
 // Models
 var models = require("./models");
