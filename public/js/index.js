@@ -1,6 +1,7 @@
 
 $(document).ready(function() {
-
+console.log(req.user.id)
+// console.log(quiz)
   //Adding a user to the database 
   $("#userNameSubmit").on("click", function(event) {
     event.preventDefault()
@@ -41,7 +42,7 @@ $(document).ready(function() {
     Q6: $("#q6").val(),
     Q7: $("#q7").val(),
     Q8: $("#q8").val(),
-    QuizId: str
+    // QuizId: str
     };
   $.post("/api/answer", answers, function(data) {
 
