@@ -1,14 +1,14 @@
 {
   "development": {
     "username": "root",
-    "password": your password here,
+    "password": "Monday15!",
     "database": "hygge",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": your password here,
+    "password": "Monday15!",
     "database": "hygge",
     "host": "localhost",
     "dialect": "mysql",
