@@ -33,4 +33,15 @@ module.exports = function(app) {
     });
   });
 
+  //get the answers total value back within specific ranges
+  app.get("/api/answer", function(req, res){
+    db.Answer.findOne({
+      where:{
+        id: req.params.id
+      }
+    }).then(function(resPost){
+      res.json(resPost)
+    });
+  });
+
 };

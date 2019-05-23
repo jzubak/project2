@@ -8,6 +8,7 @@ module.exports = function(sequelize, DataTypes) {
         Q6: DataTypes.INTEGER,
         Q7: DataTypes.INTEGER,
         Q8: DataTypes.INTEGER,
+        QA: DataTypes.INTEGER
     });
     Answer.associate = function(models) {
         Answer.belongsTo(models.Quiz, {  
