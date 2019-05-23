@@ -1,3 +1,139 @@
+body{
+  background-color: #353132;
+}
+
 .list-group-item {
   line-height: 2.5;
+}
+.noMargin{
+  position: relative;
+  margin: 0;
+}
+.center{
+  text-align: center;
+}
+.LogoTitle{
+  margin-top: 55;
+}
+.LandingRow{
+  height:980px;
+}
+#LandingImg {
+  background-image: url(../assets/images/LandingPageMainImage.jpg);
+  width: 100%;
+  height: 80vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  z-index: -1;
+}
+
+#SlantedBox{
+  position: relative;
+  background-image: url(../assets/images/SlantedBox.png);
+  width: 100%;
+  height: 350px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 1;
+  bottom: 170;
+}
+.logoText{
+  position: relative;
+  color: #f490a6;
+  z-index: 10;
+  
+}
+.icon1{
+  background-image: url(../assets/images/Icon.png);
+  position: relative;
+  z-index: 20;
+  width: 28px;
+  height: 20px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-left: 20%;
+  margin-top: 35px;
+ 
+}
+.iconP1{
+  color: #f7dcad;
+  width: 130px;
+  text-align: center;
+  position: relative;
+  top: 40;
+  right: 40;
+
+}
+.iconP2{
+  color: #f7dcad;
+  width: 150px;
+  text-align: center;
+  position: relative;
+  top: 40;
+  right: 60;
+
+}
+.iconP3{
+  color: #f7dcad;
+  width: 150px;
+  text-align: center;
+  position: relative;
+  top: 40;
+  right: 50;
+
+}
+.icon2{
+  background-image: url(../assets/images/Icon.png);
+  position: relative;
+  z-index: 20;
+  width: 28px;
+  height: 20px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-left:47%;
+  bottom: 20;
+}
+.icon3{
+  background-image: url(../assets/images/Icon.png);
+  position: relative;
+  z-index: 20;
+  width: 28px;
+  height: 20px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-left: 80%;
+  bottom: 40;
+}
+.roomBG{
+  position: relative;
+  width: 100%;
+  height: 250px;
+  background-color: #fff6e7;
+  margin-top: 90px;
+}
+.ChooseRoom{
+  margin-top: 20px;
+  padding-top: 10px;
+}
+
+.LivingRoom1{
+  background-image: url(https://via.placeholder.com/150);
+  position: relative;
+  z-index: 30;
+  background-size: cover;
+  background-repeat: no-repeat;
+  bottom: 20;
+
+}
+.favorites{
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background-color: #f7dcad;
+}
+.FavTitle{
+  margin-left: 5%;
+  padding-top: 15px;
+  margin-bottom:350px;
 }
