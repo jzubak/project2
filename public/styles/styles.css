@@ -5,6 +5,7 @@ body{
 .list-group-item {
   line-height: 2.5;
 }
+
 .noMargin{
   position: relative;
   margin: 0;
@@ -137,3 +138,115 @@ body{
   padding-top: 15px;
   margin-bottom:350px;
 }
+=======
+
+/* NavBar */
+
+.icon{
+  display: none;
+  height: 25px;
+}
+
+.full{
+  height: 25px;
+}
+
+@media only screen and (max-width: 500px){ 
+  .full{
+    display: none;
+  }
+
+  .icon{
+    display: block;
+    float: left;
+  }
+
+  .navbar{
+    height: 44px
+  }
+}
+
+/* Sizes */
+
+.small {
+  height: 18px;
+}
+
+.mw50{
+  max-width: 50%;
+}
+
+/* Position */
+
+.floatright{
+  float: right;
+}
+
+.floatleft{
+  float: left;
+}
+
+.w50{
+  width: 50%;
+}
+
+/* Fonts */
+
+.regularfont{
+  font-family: interstate, sans-serif;
+  font-weight: 500;
+  font-style: normal; 
+}
+
+.lightfont{
+  font-family: interstate, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.twentypixelfont{
+  font-size: 20px;
+}
+
+.eighteenpixelfont{
+  font-size: 18px;
+}
+
+/* Colors */
+
+.textyellow{
+  color: #fff6e7
+}
+
+.backgroundyellow{
+  background-color: #fff6e7;
+}
+
+.textgray{
+  color: #353132;
+}
+
+.bordergray{
+  border-color: #353132;
+  border-width: 8px;
+  border-style: solid;
+}
+
+a:hover{
+  text-decoration: none;
+  color: #f490a6;
+}
+
+
+
+/* Background Image */
+
+body {
+  background-image: url("../assets/images/QuizBackground.jpg");
+  background-color: #fff6e7;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+ }
