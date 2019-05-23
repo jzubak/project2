@@ -16,6 +16,8 @@
 
 <body>
 
+    <div id="body"></div> 
+
     <!-- NAVBAR -->
 
     <div class="backgroundyellow p-2 navbar">
@@ -26,7 +28,7 @@
             </a>
         </span>
         <div class="floatright regularfont eighteenpixelfont">
-            <a class="textgray" href="#">
+            <a class="textgray pinkhover" href="#">
                 Sign in
             </a>
         </div>
@@ -34,8 +36,8 @@
 
     <!--QUIZ CONTAINER-->
 
-    <div class="container p-2 pb-5 my-5 mx-auto bordergray backgroundyellow">
-        <div class="row">
+    <div class="container p-2 pb-5 my-5 mx-2 bordergray backgroundyellow mx-auto margin">
+        <div class="row w100">
             <div class="col-12 d-flex align-items-baseline">
                 <img class="small floatleft d-flex align-items-end" src="assets/images/Icon.png">
                 <div id="roomname" class="floatleft twentypixelfont regularfont ml-2">Living Room</div>
@@ -43,14 +45,46 @@
         </div>
         <div class="row">
             <div class="col-12">
-                <div id="question"></div>
+                <div id="question" class="regularfont eighteenpixelfont mt-5 px-4 text-center">We only need you to
+                    answer eight questions in order to find your ideal style. Each question will present you with four
+                    choices. Pick your favorite!</div>
             </div>
         </div>
-        <div class="row">
+        <div class="row text-center">
             <div class="col-12">
-                <div id="answers"></div>
+                <div id="answers" class="twentyfourpixelfont regularfont mt-5 pointer">
+                    <div class="row">
+                        <div class="col">
+                            <img id="option1" value="" class="choice answerbox m-1" src="">
+                        </div>
+                        <div class="col">
+                            <img id="option2" value="" class="choice answerbox m-1" src="">
+                        </div>
+                        <div class="col">
+                            <img id="option3" value="" class="choice answerbox m-1" src="">
+                        </div>
+                        <div class="col">
+                            <img id="option4" value="" class="choice answerbox m-1" src="">
+                        </div>
+                    </div>
+                    <div id="start" class="pinkhover">START</div>
+                </div>
             </div>
         </div>
     </div>
 
     <!--FOOTER-->
+    <!-- <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 px-5 backgroundgray h100px pointer textgray">
+
+            </div>
+        </div>
+    </div> -->
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/quiz.js"></script>
+
+</body>
+
+</html>
