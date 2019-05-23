@@ -73,6 +73,7 @@ var LivingRoom = [
     }
 ]
 
+
 var useranswers = []
 var total = 0
 var clicked = true
@@ -191,4 +192,3 @@ function updateAnswers(answers) {
       data: answers
     });
   }
-

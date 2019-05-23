@@ -1,0 +1,113 @@
+<div id="home">
+  
+  <div class="container">
+    <div id="welcome"></div>
+
+    <div class="row">
+      <div class="col-8 offset-2"> 
+        <form class="clearfix mb-4" action="POST">
+      
+    
+
+    <br><br>
+    {{!-- the #room id is how we get the value for the Quizname line in our DB index.js line 26  --}}
+    <h3><strong>Pick a Quiz</strong></h3>
+    <select class="chosen-select" id="room">
+    <option value=""></option>
+    <option value="bed room">bed room</option>
+    <option value="living room">living room</option>
+    <option value="kitchen">kitchen</option>
+    <option value="bathroom">bathroom</option>
+    </select>
+    <br><br><br>
+
+     {{!-- !! Living Room --}}
+    <h1>Questions</h1>
+    <h3><strong>Question 1</strong></h3>
+    <h4>What chair do you like best?</h4>
+    <div class="d-flex justify-content-center" id ="q1">
+      <button class="btn"><img src = "/assets/images/midCentury_chair.jpg" alt ="Mid Century"></button>
+      <button class="btn"><img src = "/assets/images/victorian_chair.jpg" alt ="Victorian"></button>
+      <button class="btn"><img src = "/assets/images/bohemian_chair.jpg" alt ="Bohemian"></button>
+      <button class="btn"><img src = "/assets/images/country_chair.jpg" alt ="Country/Farm"></button>
+      </div>
+    <br><br>
+    <h3><strong>Question 2</strong></h3>
+    <h4>What table do you like best?</h4>
+   <div class="d-flex justify-content-center" id ="q2">
+      <button class="btn"><img src = "/assets/images/midCentury_table.jpg" alt ="Mid Century"></button>
+      <button class="btn"><img src = "/assets/images/victorian_table.jpg" alt ="Victorian"></button>
+      <button class="btn"><img src = "/assets/images/bohemian_table.jpg" alt ="Bohemian"></button>
+      <button class="btn"><img src = "/assets/images/country_table.jpg" alt ="Country/Farm"></button>
+       </div>
+    <br><br>
+    <h3><strong>Question 3</strong></h3>
+    <h4>What lamp do you like best?</h4>
+  <div class="d-flex justify-content-center" id ="q3">
+      <button class="btn"><img src = "/assets/images/midCentury_lamp.jpg" alt ="Mid Century"></button>
+      <button class="btn"><img src = "/assets/images/victorian_lamp.jpg" alt ="Victorian"></button>
+      <button class="btn"><img src = "/assets/images/bohemian_lamp.jpg" alt ="Bohemian"></button>
+      <button class="btn"><img src = "/assets/images/country_lamp.jpg" alt ="Country/Farm"></button>
+       </div>
+    <br><br>
+    <h3><strong>Question 4</strong></h3>
+    <h4>What art piece do you like best?</h4>
+ <div class="d-flex justify-content-center" id ="q4">
+      <button class="btn"><img src = "/assets/images/midCentury_art.jpg" alt ="Mid Century"></button>
+      <button class="btn"><img src = "/assets/images/victorian_art.jpg" alt ="Victorian"></button>
+      <button class="btn"><img src = "/assets/images/bohemian_art.jpg" alt ="Bohemian"></button>
+      <button class="btn"><img src = "/assets/images/country_art.jpg" alt ="Country/Farm"></button>
+       </div>
+    <br><br>
+    <br><br>
+    <h3><strong>Question 5</strong></h3>
+    <h4>What decor do you like best?</h4>
+   <div class="d-flex justify-content-center" id ="q5">
+      <button class="btn"><img src = "/assets/images/midCentury_decor.jpg" alt ="Mid Century"></button>
+      <button class="btn"><img src = "/assets/images/victorian_decor.jpg" alt ="Victorian"></button>
+      <button class="btn"><img src = "/assets/images/bohemian_decor.jpg" alt ="Bohemian"></button>
+      <button class="btn"><img src = "/assets/images/country_decor.jpg" alt ="Country/Farm"></button>
+       </div>
+    <br><br>
+    <h3><strong>Question 6</strong></h3>
+    <h4>What rug do you like best?</h4>
+  <div class="d-flex justify-content-center" id ="q6">
+      <button class="btn"><img src = "/assets/images/midCentury_rug.jpg" alt ="Mid Century"></button>
+      <button class="btn"><img src = "/assets/images/victorian_rug.jpg" alt ="Victorian"></button>
+      <button class="btn"><img src = "/assets/images/bohemian_rug.jpg" alt ="Bohemian"></button>
+      <button class="btn"><img src = "/assets/images/country_rug.jpg" alt ="Country/Farm"></button>
+       </div>
+    <br><br>
+    <h3><strong>Question 7</strong></h3>
+    <h4>What clock do you like best?</h4>
+   <div class="d-flex justify-content-center" id ="q7">
+      <button class="btn"><img src = "/assets/images/midCentury_clock.jpg" alt ="Mid Century"></button>
+      <button class="btn"><img src = "/assets/images/victorian_clock.jpg" alt ="Victorian"></button>
+      <button class="btn"><img src = "/assets/images/bohemian_clock.jpg" alt ="Bohemian"></button>
+      <button class="btn"><img src = "/assets/images/country_clock.jpg" alt ="Country/Farm"></button>
+       </div>
+    <br><br>
+    <h3><strong>Question 8</strong></h3>
+    <h4>What candle do you like best?</h4>
+ <div class="d-flex justify-content-center" id ="q8">
+      <button class="btn"><img src = "/assets/images/midCentury_candle.jpg" alt ="Mid Century"></button>
+      <button class="btn"><img src = "/assets/images/victorian_candle.jpg" alt ="Victorian"></button>
+      <button class="btn"><img src = "/assets/images/bohemian_candle.jpg" alt ="Bohemian"></button>
+      <button class="btn"><img src = "/assets/images/country_candle.jpg" alt ="Country/Farm"></button>
+       </div>
+    </select>
+        </ul>
+        <br><br>
+
+    <!-- Id #quizSubmit is used to trigger the onclick that makes the .post to the DB -->
+    <button type="submit" class="btn btn-primary btn-lg btn-block" id="quizSubmit">
+      <i class="fa fa-check-circle" aria-hidden="true"></i>Submit</button>
+      </div>
+    
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
