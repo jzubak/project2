@@ -19,6 +19,12 @@ exports.quiz = function(req, res) {
  
 }
 
+exports.results = function(req, res) {
+    
+    res.render('results');
+ 
+}
+
 exports.logout = function(req, res) {
  
     req.session.destroy(function(err) {
