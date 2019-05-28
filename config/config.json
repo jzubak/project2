@@ -2,14 +2,14 @@
 {
   "development": {
     "username": "root",
-    "password": "R@v1tz87",
+    "password": "tape88white",
     "database": "hygge",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "R@v1tz87",
+    "password": "tape88white",
     "database": "hygge",
     "host": "localhost",
     "dialect": "mysql",
