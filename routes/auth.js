@@ -14,7 +14,7 @@ module.exports = function(app, passport) {
     function(req, res) {
         var id = encodeURIComponent(req.user.id);
         var first = encodeURIComponent(req.user.firstname)
-        res.redirect('quiz/?userId=' + id + '?userName=' + first);
+        res.redirect('quiz/?userId=' + id + '&userName=' + first);
       console.log(`${cyan} req.user keys: ${yellow}${Object.keys(req.user)}${reset}`)
       console.log(`${cyan} req.user values: ${yellow}${Object.values(req.user)}${reset}`)
     });
@@ -28,7 +28,7 @@ module.exports = function(app, passport) {
     function(req, res) {
     var id = encodeURIComponent(req.user.id);
     var first = encodeURIComponent(req.user.firstname)
-    res.redirect('quiz/?userId=' + id + '?userName=' + first);
+    res.redirect('quiz/?userId=' + id + '&userName=' + first);
     //   res.redirect('quiz/' + req.user.id);
       console.log(`${cyan} req.user keys: ${yellow}${Object.keys(req.user)}${reset}`)
       console.log(`${cyan} req.user values: ${yellow}${Object.values(req.user)}${reset}`)

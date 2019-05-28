@@ -1,3 +1,3 @@
--- Drop Database hygge;
+Drop Database hygge;
 CREATE DATABASE hygge;
 
