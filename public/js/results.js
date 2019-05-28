@@ -1,6 +1,17 @@
 //this needs to be broken down into a client side and a server side version, keeping the api call on the server and just referencing it on the client
 var style = db.Answers.QA;
 var terms = "";
+
+function getUrlParameter(name) {
+    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+    var results = regex.exec(location.search);
+    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+};
+  var userId = getUrlParameter('userId')
+  var quizId = getUrlParameter('quizId')
+  var answerId = getUrlParameter('answerSetId')
+
 $(function () {
     $("#submit").on("click", function (event) {
 
