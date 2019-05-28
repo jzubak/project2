@@ -9,6 +9,8 @@ module.exports = function(app, passport) {
 
     app.get('/signin', authController.signin);
 
+    app.get('/results', authController.results);
+
     app.post('/signup', 
     passport.authenticate('local-signup', { failureRedirect: '/index' }),
     function(req, res) {
@@ -29,7 +31,6 @@ module.exports = function(app, passport) {
     var id = encodeURIComponent(req.user.id);
     var first = encodeURIComponent(req.user.firstname)
     res.redirect('quiz/?userId=' + id + '&userName=' + first);
-    //   res.redirect('quiz/' + req.user.id);
       console.log(`${cyan} req.user keys: ${yellow}${Object.keys(req.user)}${reset}`)
       console.log(`${cyan} req.user values: ${yellow}${Object.values(req.user)}${reset}`)
     });
