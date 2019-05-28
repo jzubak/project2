@@ -10,6 +10,8 @@ $(document).ready(function() {
 };
   var userId = getUrlParameter('userId')
   var userName = getUrlParameter('userName')
+  console.log("user id = " + userId)
+  console.log("user name = " + userName)
   
   var w = $("<h1>")
       w.append("Welcome " + userName + ", take one of our simple quizzes to start finding the furniture of your dreams");
