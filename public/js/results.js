@@ -1,3 +1,5 @@
+$(document).ready(function() {
+
 //this needs to be broken down into a client side and a server side version, keeping the api call on the server and just referencing it on the client
 // var db = require('../models');
 // var terms = "";
@@ -18,107 +20,91 @@ console.log("answer ID = " + answerId)
 
 function match (int) {
     $.get("/api/answer", function(req, res){
-        console.log("the number passed into this function is: " + int);
+        // console.log(req[req.length - 1])
+        // console.log("the number passed into this function is: " + int);
 
         for(var i = 0; i < req.length; i++) {
-            console.log("this is req " + [i] + "'s Quiz Id: " + req[i].QuizId)
-            if (int === req[i].QuizId) {
-                console.log("these numbers match")
+            // console.log("this is req " + [i] + "'s Quiz Id: " + req[i].QuizId)
+            if (parseInt(int) === req[i].QuizId) {
+                // console.log("these numbers match")
+                // console.log(req[i].Total)
+                var Total = req[i].Total
 
             }
-        }
+        }terms(Total)
     });
-
+    
 } match(quizId)
 
-// var style = getStyle();
-// function getStyle(){
-    // })
-// }
-// function getResults(userId){
-//     quizId = userId;
-//     if (quizId){
-//       quizId = "/?quizId="+quizId;
-//     }
-//     $.get("/api/answers"+quizId, function(data){
-//       console.log("answers", data);
-//       $.ajax({
-//           method: "GET",
-//           url: "/api/answers",
-//           data: data.Total
-//     })
-//     .then(function(){
-//         window.location.href = "/results";
-//         })
-//     });
-//   }
+function terms(total) {
+    console.log("the total is " + total)
+    var style;
+    //ranges mid century = 8-14; bohemian = 15-21; vicotrian = 22-28; farmhouse = 29-32
+    if (total <= 14) {
+        style = "mid century"
+    } else if (total > 14 && total <= 21) {
+        style = "bohemian"
+    } else if (total > 21 && total <= 28) {
+        style = "victorian"
+    } else
+        style = "farmhouse"
+        displayRes(style);
+}
+function displayRes(terms) {
+        console.log("making the API call")
+        console.log("our search terms are " + terms)
+        // $('#answerDisplay').bind('finish', function () {
+            //add api key to git-ignore or create a new get route to hide this on the server side
+            api_key = "oqtjkj73z380crm3r8ia8jbd";
+            terms = terms;
+            etsyURL = "https://openapi.etsy.com/v2/listings/active.js?keywords=" +
+                terms + "&category=furniture&limit=12&includes=Images:1&api_key=" + api_key;
 
-// $(function () {
-//     $(".finish").on("click", function (event) {
+            $('#resultImages').empty();
+            $('<p></p>').text('Searching for ' + terms).appendTo('#resultImages');
+            console.log("searching for " + terms)
+            console.log(etsyURL);
 
-//         $.ajax("/api/answer", {
-//             type: "POST",
-//             data: style
-//         }).then(
-//             function terms() {
-//                 //ranges mid century = 8-14; bohemian = 15-21; vicotrian = 22-28; farmhouse = 29-32
-//                 if (style >= 8 || style <= 14) {
-//                     terms = "mid century"
-//                 } else if (style >= 15 || style <= 21) {
-//                     terms = "bohemian"
-//                 } else if (style >= 22 || style <= 28) {
-//                     terms = "victorian"
-//                 } else
-//                     terms = "farmhouse"
-//             })
-//             displayRes();
-//     });
+            $.ajax({
+                url: etsyURL,
+                dataType: 'jsonp',
+                success: function (data) {
+                    if (data.ok) {
+                        console.log("data is ok")
+                        // console.log(data)
+                        // console.log(data.count)
+                        // $('#resultImages').empty();
+                        if (data.count > 0) {
+                            console.log("right above for loop")
+                            for (var i = 0; i < data.results.length; i ++) {
+                                var item = data.results[i]
+                                console.log("in the for loop")
+                                console.log(item.Images[0].url_170x135)
+                                $("<img/>").attr("src", item.Images[0].url_170x135).appendTo("#resultImages").wrap(
+                                    "<a href='" + item.url + "'></a>"
+                                );
+                                if (i % 4 == 3) {
+                                    $('<br/>').appendTo('#resultImages');
+                                }
+                            }
+                        } else {
+                            $('<p>No results.</p>').appendTo('#resultImages');
+                        }
+                    } else {
+                        $('#resultImages').empty();
+                        alert(data.error);
+                    }
+                }
+            });
+
+            return false;
+        // })
+    };
+
+});
+
+        
+    
 
 
-//     function displayRes() {
-
-//         $('#answerDisplay').bind('finish', function () {
-//             //add api key to git-ignore or create a new get route to hide this on the server side
-//             api_key = "oqtjkj73z380crm3r8ia8jbd";
-//             terms = terms;
-//             etsyURL = "https://openapi.etsy.com/v2/listings/active.js?keywords=" +
-//                 terms + "&category=furniture&limit=12&includes=Images:1&api_key=" + api_key;
-
-//             $('#resultImages').empty();
-//             $('<p></p>').text('Searching for ' + terms).appendTo('#resultImages');
-//             console.log("searching for " + terms)
-//             console.log(etsyURL);
-
-//             $.ajax({
-//                 url: etsyURL,
-//                 dataType: 'jsonp',
-//                 success: function (data) {
-//                     if (data.ok) {
-//                         $('#resultImages').empty();
-//                         if (data.count > 0) {
-//                             $.each(data.results, function (i, item) {
-//                                 $("<img/>").attr("src", item.Images[0].url_150x150).appendTo("#resultImages").wrap(
-//                                     "<a href='" + item.url + "'></a>"
-//                                 );
-//                                 if (i % 4 == 3) {
-//                                     $('<br/>').appendTo('#resultImages');
-//                                 }
-//                             });
-//                         } else {
-//                             $('<p>No results.</p>').appendTo('#resultImages');
-//                         }
-//                     } else {
-//                         $('#resultImages').empty();
-//                         alert(data.error);
-//                     }
-//                 }
-//             });
-
-//             return false;
-//         })
-//     };
-    // displayRes();
-
-// getResults();
-    // module.exports = displayRes;
-// });
+    
