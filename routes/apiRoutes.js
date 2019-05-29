@@ -11,6 +11,18 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/api/quiz", function(req, res) {
+    db.Quiz.findAll({}).then(function(dbQuizzes) {
+      res.json(dbQuizzes);
+    });
+  });
+
+  app.get("/api/answer", function(req, res) {
+    db.Answer.findAll({}).then(function(dbAnswers) {
+      res.json(dbAnswers);
+    });
+  });
+
   // Create a new user
   app.post("/api/user", function(req, res) {
     db.User.create(req.body).then(function(dbUsers) {

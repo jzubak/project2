@@ -11,6 +11,8 @@ function getUrlParameter(name) {
     console.log("user ID = " + userId)
     console.log("user name = " + userName)
 
+    $("#account").html(userName)
+
 var livingRoom = [
     question1 = {
         Question: "Pick your favorite 1?",
