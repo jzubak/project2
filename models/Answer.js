@@ -11,6 +11,12 @@ module.exports = function(sequelize, DataTypes) {
         Total: DataTypes.INTEGER
     });
     Answer.associate = function(models) {
+        Answer.hasMany(models.URLresult, {
+
+        })
+        Answer.hasMany(models.IMGresult, {
+
+        })
         Answer.belongsTo(models.Quiz, {  
             foreignKey: {
             allowNull: false
