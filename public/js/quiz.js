@@ -107,7 +107,7 @@ $(document).ready(function() {
         if (x === 8 && clicked){
                 //answer object that gets pushed to the SQL DB
     
-            pushQuiz(quiz, userId)
+            pushQuiz(quiz, userId, userName)
             console.log(answers)
             
     
@@ -210,13 +210,13 @@ $(document).ready(function() {
         }
         return array;
     }
-    function pushQuiz(quiz, userId) {
+    function pushQuiz(quiz, userId, userName) {
         $.post("/api/quiz", quiz, function(data) {
-         pushAnswers(data.id, userId)
+         pushAnswers(data.id, userId, userName)
         })
     
     }
-    function pushAnswers(str, userId) {
+    function pushAnswers(str, userId, userName) {
         var answers = {
             Q1: userAnswers[0],
             Q2: userAnswers[1],
@@ -230,14 +230,14 @@ $(document).ready(function() {
             QuizId: str
     } 
         $.post("/api/answer", answers, function(data) {
-             locationReplace(data, userId)
+             locationReplace(data, userId, userName)
         });
         
     
     }
     });
     
-    function locationReplace (data, userId) {
+    function locationReplace (data, userId, userName) {
         // console.log(data.id)
-        window.location.replace("/results?userId=" + userId + "&quizId=" + data.QuizId + "&answerSetId=" + data.id )
+        window.location.replace("/results?userId=" + userId + "&userName=" + userName + "&quizId=" + data.QuizId + "&answerSetId=" + data.id )
     }

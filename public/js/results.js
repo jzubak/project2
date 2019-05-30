@@ -16,10 +16,20 @@ var quizId = getUrlParameter('quizId')
 console.log("quiz ID = " + quizId)
 var answerId = getUrlParameter('answerSetId')
 console.log("answer ID = " + answerId)
-var result = {
-    UserId : userId
-}
+var userName = getUrlParameter('userName')
+console.log("user Name = " + userName)
 
+$("#account").html(userName);
+$(".link").attr("href", `/member/?userId=${userId}`)
+
+var URLresult = {
+    UserId : userId,
+    AnswerId : answerId
+}
+var IMGresult = {
+    UserId : userId,
+    AnswerId : answerId
+}
 
 function match (int) {
     $.get("/api/answer", function(req, res){
@@ -82,16 +92,17 @@ function displayRes(terms) {
                             for (var i = 0; i < data.results.length; i ++) {
                                 var item = data.results[i]
                                 console.log("in the for loop")
-                                console.log(item.Images[0].url_170x135)
-                                $("<img/>").attr("src", item.Images[0].url_170x135).appendTo("#resultImages").wrap(
+                                var itemImage = item.Images[0].url_170x135
+                                $("<img/>").attr("src", itemImage).appendTo("#resultImages").wrap(
                                     "<a href='" + item.url + "'></a>"
                                 );
-                                result[i] = item.url
+                                IMGresult[i] = itemImage
+                                URLresult[i] = item.url
                                 if (i % 4 == 3) {
                                     $('<br/>').appendTo('#resultImages');
                                 }
                                 if (i === 11) {
-                                    postResults(result)
+                                    postResults(URLresult, IMGresult)
                                 }
                             }
                         } else {
@@ -110,14 +121,14 @@ function displayRes(terms) {
 
 });
 
-function postResults (obj) {
-    $.post("/api/result", obj, function(data) {
+function postResults (url, img) {
+    $.post("/api/urlresults", url, function(data) {
 
-   });
-   
+    });
+    $.post("/api/imgresults", img, function(data) {
+
+    });
 
 }
-    
-
 
     
