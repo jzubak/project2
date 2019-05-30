@@ -10,10 +10,10 @@ $(document).ready(function() {
     console.log("user ID = " + userId)
 
     var userName = getUrlParameter('userName');
-    console.log("user name = " + userName)
+    // console.log("user name = " + userName)
 
-    $("#account").html(userName);
-    $(".link").attr("href", `/member/?userId=${userId}`)
+    $("#account").text("Take Another Quiz");
+    $(".link").attr("href", `/quiz1/?userId=${userId}`)
 
     $.get("/api/user", function(req, res){
         for (var i = 0; i < req.length; i ++) {
@@ -44,15 +44,19 @@ $(document).ready(function() {
         for (var i = 0; i < req.length; i ++) {
 
             if(parseInt(userId) === req[i].UserId) {
-                console.log("you're really appending shit now!")
-                
+                // console.log("you're really appending shit now!")
+                        console.log("answerId = " + req[i].AnswerId)
+                        var createdAt = req[i].createdAt
+                        var created = createdAt.split("T")
                 var answerId = $("<button class='m-1 bordergraythin regularfont backgroundyellow pinkhoverbutton'>");
                     answerId
                         .addClass("quizButton")
-                        .text("Quiz " + req[i].AnswerId)
+                        // .text("Quiz " + i+1)
+                        .text("Quiz from " + created[0])
                         .attr("data-value", req[i].AnswerId)
                 $("#dropdown").append(answerId)
             }
+            
         }
     })
 

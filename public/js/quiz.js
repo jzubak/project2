@@ -6,14 +6,25 @@ $(document).ready(function() {
         var results = regex.exec(location.search);
         return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
     };
-        var userId = getUrlParameter('userId');
-        var userName = getUrlParameter('userName');
+    var userId = getUrlParameter('userId');
+    // var userName;
+            $.get("/api/user", function(req, res){
+                for(var i = 0; i < req.length; i++) {
+                if (parseInt(userId) === req[i].id) {
+                var userName = req[i].firstname
+                    }
+                }
+            
+        // } else {
+        //     userName = getUrlParameter('userName')
+        // }
         console.log("user ID = " + userId)
         console.log("user name = " + userName)
-    
+
+        
         $("#account").html(userName);
         $(".link").attr("href", `/member/?userId=${userId}`)
-        
+    })
     var livingRoom = [
         question1 = {
             Question: "Pick the chair speaks to you the most:",
@@ -107,7 +118,7 @@ $(document).ready(function() {
         if (x === 8 && clicked){
                 //answer object that gets pushed to the SQL DB
     
-            pushQuiz(quiz, userId, userName)
+            pushQuiz(quiz, userId)
             console.log(answers)
             
     
@@ -210,13 +221,13 @@ $(document).ready(function() {
         }
         return array;
     }
-    function pushQuiz(quiz, userId, userName) {
+    function pushQuiz(quiz, userId) {
         $.post("/api/quiz", quiz, function(data) {
-         pushAnswers(data.id, userId, userName)
+         pushAnswers(data.id, userId)
         })
     
     }
-    function pushAnswers(str, userId, userName) {
+    function pushAnswers(str, userId) {
         var answers = {
             Q1: userAnswers[0],
             Q2: userAnswers[1],
@@ -230,14 +241,14 @@ $(document).ready(function() {
             QuizId: str
     } 
         $.post("/api/answer", answers, function(data) {
-             locationReplace(data, userId, userName)
+             locationReplace(data, userId)
         });
         
     
     }
     });
     
-    function locationReplace (data, userId, userName) {
+    function locationReplace (data, userId, ) {
         // console.log(data.id)
-        window.location.replace("/results?userId=" + userId + "&userName=" + userName + "&quizId=" + data.QuizId + "&answerSetId=" + data.id )
+        window.location.replace("/results?userId=" + userId + "&quizId=" + data.QuizId + "&answerSetId=" + data.id )
     }

@@ -13,6 +13,12 @@ exports.signin = function(req, res) {
  
 }
  
+exports.quiz1 = function(req, res) {
+ 
+    res.render('quiz1');
+ 
+}
+
 exports.quiz = function(req, res) {
     
     res.render('quiz');
