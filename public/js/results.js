@@ -22,6 +22,7 @@ console.log("user Name = " + userName)
 $("#account").html(userName);
 $(".link").attr("href", `/member/?userId=${userId}`)
 
+
 var URLresult = {
     UserId : userId,
     AnswerId : answerId
@@ -74,9 +75,11 @@ function displayRes(terms) {
                 terms + "&category=furniture&limit=12&includes=Images:1&api_key=" + api_key;
 
             $('#resultImages').empty();
-            $('<p></p>').text('Searching for ' + terms).appendTo('#resultImages');
+            // $('<p></p>').text('Searching for ' + terms).appendTo('#resultImages');
             console.log("searching for " + terms)
             console.log(etsyURL);
+
+            $("#container").append("<div class='row regularfont twentypixelfont textgray'> <div class='col-12'> Hey " + userName + "</div> </div> <div class='row regularfont textgray sixteenpixelfont'><div class='col-12'> You love the " + terms + " style. We have handpicked twelve items that will fit right into your living room. Click on the photo to snap them up! </div></div>" )
 
             $.ajax({
                 url: etsyURL,
@@ -84,7 +87,7 @@ function displayRes(terms) {
                 success: function (data) {
                     if (data.ok) {
                         console.log("data is ok")
-                        // console.log(data)
+                        console.log(data)
                         // console.log(data.count)
                         // $('#resultImages').empty();
                         if (data.count > 0) {
@@ -93,14 +96,21 @@ function displayRes(terms) {
                                 var item = data.results[i]
                                 console.log("in the for loop")
                                 var itemImage = item.Images[0].url_170x135
-                                $("<img/>").attr("src", itemImage).appendTo("#resultImages").wrap(
-                                    "<a href='" + item.url + "'></a>"
-                                );
+                                var col = $("<div class='col-6 col-sm-4 col-md-3 mt-4'>")
+                                var col2 = $("<div class='boxpos'>")
+                                col2.append("<div class='row'><a href='" + item.url + "'target='_blank'><img class='pinkhoverborder' src='" + itemImage +"'/></a></div>")
+                                $(col2).append("<div class='row pr-5'><div class='regularfont textgray title'>" + item.title + "</div></div>")
+                                var materials = item.materials.join(", ") 
+                                console.log(materials)
+                                $(col2).append("<div class='row pr-5'><div class='regularfont textgray title'>" + materials + "</div></div>")
+                                col2.append("<div class='row'><div class='regularfont textgray'>" + item.price + item.currency_code + "</div></div>")
+                                col.append(col2)
+                                $("#resultImages").append(col)
                                 IMGresult[i] = itemImage
                                 URLresult[i] = item.url
-                                if (i % 4 == 3) {
-                                    $('<br/>').appendTo('#resultImages');
-                                }
+                                // if (i % 4 == 3) {
+                                //     $('<br/>').appendTo('#resultImages');
+                                // }
                                 if (i === 11) {
                                     postResults(URLresult, IMGresult)
                                 }
