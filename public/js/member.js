@@ -41,24 +41,31 @@ $(document).ready(function() {
         $(".start").append(newDiv)
 
     $.get("/api/urlresults", function(req, res){
+        var quizNumbArr = []
+        var counter = 0
         for (var i = 0; i < req.length; i ++) {
 
             if(parseInt(userId) === req[i].UserId) {
+                counter ++
+                quizNumbArr.push(counter)
                 // console.log("you're really appending shit now!")
                         console.log("answerId = " + req[i].AnswerId)
                         var createdAt = req[i].createdAt
                         var created = createdAt.split("T")
+                        
                 var answerId = $("<button class='m-1 bordergraythin regularfont backgroundyellow pinkhoverbutton'>");
-                    answerId
-                        .addClass("quizButton")
-                        // .text("Quiz " + i+1)
-                        .text("Quiz from " + created[0])
-                        .attr("data-value", req[i].AnswerId)
+                    answerId.addClass("quizButton");
+                        // .text("Quiz from " + created[0])
+                    for (var j = 0; j < quizNumbArr.length; j++) {
+                        answerId.text("Quiz " + quizNumbArr[j])
+                    }
+                        answerId.attr("data-value", req[i].AnswerId)
                 $("#dropdown").append(answerId)
+                        }
             }
             
-        }
-    })
+        })
+    // }) 
 
     $(document).on("click", ".quizButton", function () {
         var buttonValue = ($(this).attr("data-value"));
@@ -117,4 +124,4 @@ $(document).ready(function() {
     });
 });
 
-$(".linkquiz").attr("href", `/quiz/?userId=${userId}`)
+// $(".linkquiz").attr("href", `/quiz/?userId=${userId}`)
