@@ -10,6 +10,11 @@ module.exports = function(app) {
       res.json(dbUsers);
     });
   });
+  app.get("/api/result", function(req, res) {
+    db.User.findAll({}).then(function(dbResults) {
+      res.json(dbResults);
+    });
+  });
 
   app.get("/api/quiz", function(req, res) {
     db.Quiz.findAll({}).then(function(dbQuizzes) {
@@ -45,15 +50,13 @@ module.exports = function(app) {
     });
   });
 
-  //get the answers total value back within specific ranges
-  app.get("/api/answer", function(req, res){
-    db.Answer.findOne({
-      where:{
-        id: req.params.id
-      }
-    }).then(function(resPost){
-      res.json(resPost)
+  app.post("/api/result", function(req, res) {
+    db.Result.create(req.body).then(function(dbResults) {
+      console.log(`${cyan}==> New Results Saved ${reset}`)
+      res.json(dbResults);
     });
   });
+
+
 
 };

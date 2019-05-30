@@ -11,79 +11,80 @@ $(document).ready(function() {
         console.log("user ID = " + userId)
         console.log("user name = " + userName)
     
-        $("#account").html(userName)
+        $("#account").html(userName);
+        $(".link").attr("href", `/member/?userId=${userId}`)
     
     var livingRoom = [
         question1 = {
-            Question: "Pick the chair speaks to you the most:",
+            Question: "Pick your favorite 1?",
             Answers: [
-                Answer1 = { Answer: "/assets/images/livingroomquiz/midCentury_chair.jpg", Value: 1 },
-                Answer2 = { Answer: "/assets/images/livingroomquiz/bohemian_chair.jpg", Value: 2 },
-                Answer3 = { Answer: "/assets/images/livingroomquiz/victorian_chair.jpg", Value: 3 },
-                Answer4 = { Answer: "/assets/images/livingroomquiz/country_chair.jpg", Value: 4 }
+                Answer1 = { Answer: "/assets/images/livingroomquiz/testchair1.jpg", Value: 1 },
+                Answer2 = { Answer: "/assets/images/livingroomquiz/testchair2.jpg", Value: 2 },
+                Answer3 = { Answer: "/assets/images/livingroomquiz/testchair3.jpg", Value: 3 },
+                Answer4 = { Answer: "/assets/images/livingroomquiz/testchair4.jpg", Value: 4 }
             ],
         },
         question2 = {
-            Question: "Which shade describes you best?",
+            Question: "Pick your favorite 2?",
             Answers: [
-                Answer1 = { Answer: "/assets/images/livingroomquiz/midCentury_red.jpg", Value: 1 },
-                Answer2 = { Answer: "/assets/images/livingroomquiz/bohemian_red.jpg", Value: 2 },
-                Answer3 = { Answer: "/assets/images/livingroomquiz/victorian_red.jpg", Value: 3 },
-                Answer4 = { Answer: "/assets/images/livingroomquiz/country_red.jpg", Value: 4 }
+                Answer1 = { Answer: "/assets/images/livingroomquiz/testred1.jpg", Value: 1 },
+                Answer2 = { Answer: "/assets/images/livingroomquiz/testred2.jpg", Value: 2 },
+                Answer3 = { Answer: "/assets/images/livingroomquiz/testred3.jpg", Value: 3 },
+                Answer4 = { Answer: "/assets/images/livingroomquiz/testred4.jpg", Value: 4 }
             ]
         },
         question3 = {
-            Question: "Pick the color that brings you the most joy:",
+            Question: "Pick your favorite 3?",
             Answers: [
-                Answer1 = { Answer: "/assets/images/livingroomquiz/midCentury_green.jpg", Value: 1 },
-                Answer2 = { Answer: "/assets/images/livingroomquiz/bohemian_green.jpg", Value: 2 },
-                Answer3 = { Answer: "/assets/images/livingroomquiz/victorian_green.jpg", Value: 3 },
-                Answer4 = { Answer: "/assets/images/livingroomquiz/country_green.jpg", Value: 4 },
+                Answer1 = { Answer: "/assets/images/livingroomquiz/testgreen1.jpg", Value: 1 },
+                Answer2 = { Answer: "/assets/images/livingroomquiz/testgreen2.jpg", Value: 2 },
+                Answer3 = { Answer: "/assets/images/livingroomquiz/testgreen3.jpg", Value: 3 },
+                Answer4 = { Answer: "/assets/images/livingroomquiz/testgreen4.jpg", Value: 4 },
             ],
         },
         question4 = {
-            Question: "Which orange is your sunshine on a cloudy day?",
+            Question: "Pick your favorite 4?",
             Answers: [
-                Answer1 = { Answer: "/assets/images/livingroomquiz/midCentury_orange.jpg", Value: 1 },
-                Answer2 = { Answer: "/assets/images/livingroomquiz/bohemian_orange.jpg", Value: 2 },
-                Answer3 = { Answer: "/assets/images/livingroomquiz/victorian_orange.jpg", Value: 3 },
-                Answer4 = { Answer: "/assets/images/livingroomquiz/country_orange.jpg", Value: 4 }
+                Answer1 = { Answer: "/assets/images/livingroomquiz/testorange1.jpg", Value: 1 },
+                Answer2 = { Answer: "/assets/images/livingroomquiz/testorange2.jpg", Value: 2 },
+                Answer3 = { Answer: "/assets/images/livingroomquiz/testorange3.jpg", Value: 3 },
+                Answer4 = { Answer: "/assets/images/livingroomquiz/testorange4.jpg", Value: 4 }
             ]
         },
         question5 = {
-            Question: "Pick a room to relax in.",
+            Question: "Pick your favorite 5?",
             Answers: [
-                Answer1 = { Answer: "/assets/images/livingroomquiz/midCentury_room.jpg", Value: 1},
-                Answer2 = { Answer: "/assets/images/livingroomquiz/bohemian_room.jpg", Value: 2},
-                Answer3 = { Answer: "/assets/images/livingroomquiz/victorian_room.jpg", Value: 3},
-                Answer4 = { Answer: "/assets/images/livingroomquiz/country_room.jpg", Value: 4}
+                Answer1 = { Answer: "Option1", Value: 1},
+                Answer2 = { Answer: "Option2", Value: 2},
+                Answer3 = { Answer: "Option3", Value: 3},
+                Answer4 = { Answer: "Option4", Value: 4}
             ],
         },
         question6 = {
-            Question: "Which lamp do you want to light up your life?",
+            Question: "Pick your favorite 6?",
             Answers: [
-                Answer1 = { Answer: "/assets/images/livingroomquiz/midCentury_lamp.jpg", Value: 1},
-                Answer2 = { Answer: "/assets/images/livingroomquiz/bohemian_lamp.jpg", Value: 2},
-                Answer3 = { Answer: "/assets/images/livingroomquiz/victorian_lamp.jpg", Value: 3},
-                Answer4 = { Answer: "/assets/images/livingroomquiz/country_lamp.jpg", Value: 4}
+                Answer1 = { Answer: "Option1", Value: 1},
+                Answer2 = { Answer: "Option2", Value: 2},
+                Answer3 = { Answer: "Option3", Value: 3},
+                Answer4 = { Answer: "Option4", Value: 4}
             ],
         },
         question7 = {
-            Question: "Pick a rug to dig your toes into",
+            Question: "Pick your favorite 7?",
             Answers: [
-                Answer1 = { Answer: "/assets/images/livingroomquiz/midCentury_rug.jpg", Value: 1},
-                Answer2 = { Answer: "/assets/images/livingroomquiz/bohemian_rug.jpg", Value: 2},
-                Answer3 = { Answer: "/assets/images/livingroomquiz/victorian_rug", Value: 3},
-                Answer4 = { Answer: "/assets/images/livingroomquiz/country_rug.jpg", Value: 4}
+                Answer1 = { Answer: "Option1", Value: 1},
+                Answer2 = { Answer: "Option2", Value: 2},
+                Answer3 = { Answer: "Option3", Value: 3},
+                Answer4 = { Answer: "Option4", Value: 4}
             ],
         },
         question8 = {
-            Question: "Which table do you want to eat at?",
+            Question: "Pick your favorite 8?",
             Answers: [
-                Answer1 = { Answer: "/assets/images/livingroomquiz/midCentury_table.jpg", Value: 1},
-                Answer2 = { Answer: "/assets/images/livingroomquiz/bohemian_table.jpg", Value: 2},
-                Answer3 = { Answer: "/assets/images/livingroomquiz/victorian_table.jpg", Value: 3},
-                Answer4 = { Answer: "/assets/images/livingroomquiz/country_table.jpg", Value: 4}
+                Answer1 = { Answer: "Option1", Value: 1},
+                Answer2 = { Answer: "Option2", Value: 2},
+                Answer3 = { Answer: "Option3", Value: 3},
+                Answer4 = { Answer: "Option4", Value: 4}
             ],
         }
     ]
@@ -240,3 +241,4 @@ $(document).ready(function() {
         // console.log(data.id)
         window.location.replace("/results?userId=" + userId + "&quizId=" + data.QuizId + "&answerSetId=" + data.id )
     }
+    

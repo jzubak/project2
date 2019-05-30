@@ -16,6 +16,9 @@ var quizId = getUrlParameter('quizId')
 console.log("quiz ID = " + quizId)
 var answerId = getUrlParameter('answerSetId')
 console.log("answer ID = " + answerId)
+var result = {
+    UserId : userId
+}
 
 
 function match (int) {
@@ -83,8 +86,12 @@ function displayRes(terms) {
                                 $("<img/>").attr("src", item.Images[0].url_170x135).appendTo("#resultImages").wrap(
                                     "<a href='" + item.url + "'></a>"
                                 );
+                                result[i] = item.url
                                 if (i % 4 == 3) {
                                     $('<br/>').appendTo('#resultImages');
+                                }
+                                if (i === 11) {
+                                    postResults(result)
                                 }
                             }
                         } else {
@@ -103,7 +110,13 @@ function displayRes(terms) {
 
 });
 
-        
+function postResults (obj) {
+    $.post("/api/result", obj, function(data) {
+
+   });
+   
+
+}
     
 
 
