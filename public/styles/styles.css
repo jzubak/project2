@@ -2,6 +2,22 @@
   min-height: calc(100vh - 148px)
 }
 
+.title{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.title:hover{
+  text-overflow: ellipsis;
+  overflow: display;
+  white-space: nowrap;
+}
+
+.topmargin{
+  margin-top: 80px;
+}
+
 .footer{
   height: 100px;
   background-color: #353132;
@@ -13,6 +29,7 @@
 
 .body{
   position: fixed;
+  top: 0;
   background-color: #fff6e7;
   width: 100vw;
   height: 100vh;
@@ -25,6 +42,25 @@
     position:relative;
     top: -190px;
     z-index: 20;
+}
+
+.boxpos{
+  position:relative;
+  left:18%;
+}
+
+@media only screen and (max-width: 992px){ 
+  .boxpos{
+    position:relative;
+    left:1%
+  }
+}
+
+@media only screen and (max-width: 575px){ 
+  .boxpos{
+    position:relative;
+    left:20%
+  }
 }
 
 .list-group-item {
@@ -40,6 +76,7 @@
   position:relative;
   margin-top: 10px;
 }
+
 
 .center{
   text-align: center;
@@ -335,6 +372,12 @@ a:hover{
   color:#f490a6;
 }
 
+.pinkhoverborder:hover{
+  border-color: #f490a6;
+  border-style: solid;
+  border-width: 4px;
+}
+
 .pinkhoverbutton:hover{
   background-color: #f490a6;
   border-color: #f490a6;
@@ -363,6 +406,7 @@ a:hover{
   position: fixed;
   background-image: url("../assets/images/QuizBackground.jpg");
   background-color: #fff6e7;
+  top: 0;
   width: 100vw;
   height: 100vh;
   background-size: cover;

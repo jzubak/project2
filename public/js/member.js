@@ -9,6 +9,12 @@ $(document).ready(function() {
     var userId = parseInt(getUrlParameter('userId'))
     console.log("user ID = " + userId)
 
+    var userName = getUrlParameter('userName');
+    console.log("user name = " + userName)
+
+    $("#account").html(userName);
+    $(".link").attr("href", `/member/?userId=${userId}`)
+
     $.get("/api/user", function(req, res){
         for (var i = 0; i < req.length; i ++) {
 
@@ -40,7 +46,7 @@ $(document).ready(function() {
             if(parseInt(userId) === req[i].UserId) {
                 console.log("you're really appending shit now!")
                 
-                var answerId = $("<button>");
+                var answerId = $("<button class='m-1 bordergraythin regularfont backgroundyellow pinkhoverbutton'>");
                     answerId
                         .addClass("quizButton")
                         .text("Quiz " + req[i].AnswerId)
@@ -51,7 +57,6 @@ $(document).ready(function() {
     })
 
     $(document).on("click", ".quizButton", function () {
-        $('#results').empty();
         var buttonValue = ($(this).attr("data-value"));
             buttonValue = parseInt(buttonValue)
 
@@ -61,45 +66,44 @@ $(document).ready(function() {
 
                 for(var i = 0; i < req.length; i++) {
                     if (buttonValue === req[i].AnswerId && userId === req[i].UserId && buttonValue === data[i].AnswerId && userId === data[i].UserId) {
-
-                            
                         
-                        $("<img/>").attr("src", req[i][0]).addClass("0").appendTo("#results").wrap(
+                        $('.c').empty();
+
+                        $("<img/>").attr("src", req[i][0]).addClass("0").appendTo("#results1").wrap(
                             "<a href='" + data[i][0] + "'></a>"
                         );
-                        $("<img/>").attr("src", req[i][1]).addClass("1").appendTo("#results").wrap(
+                        $("<img/>").attr("src", req[i][1]).addClass("1").appendTo("#results2").wrap(
                             "<a href='" + data[i][1] + "'></a>"
                         );
-                        $("<img/>").attr("src", req[i][2]).addClass("2").appendTo("#results").wrap(
+                        $("<img/>").attr("src", req[i][2]).addClass("2").appendTo("#results3").wrap(
                             "<a href='" + data[i][2] + "'></a>"
                         );
-                        $("<img/>").attr("src", req[i][3]).addClass("3").appendTo("#results").wrap(
+                        $("<img/>").attr("src", req[i][3]).addClass("3").appendTo("#results4").wrap(
                             "<a href='" + data[i][3] + "'></a>"
                         );
-                        $('<br/>').appendTo('#results');
-                        $("<img/>").attr("src", req[i][4]).addClass("4").appendTo("#results").wrap(
+                        $("<img/>").attr("src", req[i][4]).addClass("4").appendTo("#results5").wrap(
                             "<a href='" + data[i][4] + "'></a>"
                         );
-                        $("<img/>").attr("src", req[i][5]).addClass("5").appendTo("#results").wrap(
+                        $("<img/>").attr("src", req[i][5]).addClass("5").appendTo("#results6").wrap(
                             "<a href='" + data[i][5] + "'></a>"
                         );
-                        $("<img/>").attr("src", req[i][6]).addClass("6").appendTo("#results").wrap(
+                        $("<img/>").attr("src", req[i][6]).addClass("6").appendTo("#results7").wrap(
                             "<a href='" + data[i][6] + "'></a>"
                         );
-                        $("<img/>").attr("src", req[i][7]).addClass("7").appendTo("#results").wrap(
+                        $("<img/>").attr("src", req[i][7]).addClass("7").appendTo("#results8").wrap(
                             "<a href='" + data[i][7] + "'></a>"
                         );
-                        $('<br/>').appendTo('#results');
-                        $("<img/>").attr("src", req[i][8]).addClass("8").appendTo("#results").wrap(
+    
+                        $("<img/>").attr("src", req[i][8]).addClass("8").appendTo("#results9").wrap(
                             "<a href='" + data[i][8] + "'></a>"
                         );
-                        $("<img/>").attr("src", req[i][9]).addClass("9").appendTo("#results").wrap(
+                        $("<img/>").attr("src", req[i][9]).addClass("9").appendTo("#results10").wrap(
                             "<a href='" + data[i][9] + "'></a>"
                         );
-                        $("<img/>").attr("src", req[i][10]).addClass("10").appendTo("#results").wrap(
+                        $("<img/>").attr("src", req[i][10]).addClass("10").appendTo("#results11").wrap(
                             "<a href='" + data[i][10] + "'></a>"
                         );
-                        $("<img/>").attr("src", req[i][11]).addClass("11").appendTo("#results").wrap(
+                        $("<img/>").attr("src", req[i][11]).addClass("11").appendTo("#results12").wrap(
                             "<a href='" + data[i][11] + "'></a>"
                         );
                     }

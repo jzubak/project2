@@ -1,23 +1,23 @@
-<div class="backgroundgray p-2 navbar">
+<div class="backgroundgray p-2 navbar fixed-top">
     <span>
-        <a href="#">
+        <a href="index">
             <img src="assets/images/Logo(horizontal)-yellow.png" class="full logo">
             <img src="assets/images/icon.png" class="icon logo">
         </a>
     </span>
-        <div class="floatright regularfont eighteenpixelfont">
-            <a class="textgray pinkhover link">
-                <div id="account"></div>
-            </a>
-        </div>
+    <div class="floatright regularfont eighteenpixelfont">
+        <a class="textyellow pinkhover link">
+            <div id="account"></div>
+        </a>
+    </div>
 </div>
 
 <div class="body"></div>
 
 <!--QUIZ CONTAINER-->
 
-<div class="container bordergray p-2 mt-4">
-    <div class="row">
+<div id="container" class="container bordergray p-2 topmargin">
+    {{!-- <div class="row">
         <div class="col-12 textgray sixteenpixelfont regularfont">
             Filters
         </div>
@@ -62,14 +62,18 @@
                 <div class="mr-1">hide</div>
             </div>
         </div>
+    </div> --}}
+</div>
+<div class="container my-5">
+    <div id="resultImages" class="row"></div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 px-5 backgroundgray h100px pointer textgray">
+
+        </div>
     </div>
-</div>
-<div class="row w100">
-    <div class="col-12 d-flex justify-content-center">
-        <div id="resultImages"></div>
-    </div>
-</div>
-</div>
 </div>
 
 
