@@ -54,6 +54,12 @@ module.exports = function(sequelize, Sequelize) {
         User.hasMany(models.Quiz, {
           onDelete: "cascade"
         });
+        User.hasMany(models.URLresult, {
+            onDelete: "cascade"
+        });
+        User.hasMany(models.IMGresult, {
+            onDelete: "cascade"
+        });
       };
  
     return User;

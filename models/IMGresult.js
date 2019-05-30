@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-    var Result = sequelize.define("Result", {
+    var IMGresult = sequelize.define("IMGresult", {
         0: DataTypes.STRING,
         1: DataTypes.STRING,
         2: DataTypes.STRING,
@@ -13,14 +13,19 @@ module.exports = function(sequelize, DataTypes) {
         10: DataTypes.STRING,        
         11: DataTypes.STRING   
     });
-    Result.associate = function(models) {
-        Result.belongsTo(models.User, {  
+    IMGresult.associate = function(models) {
+        IMGresult.belongsTo(models.Answer, {  
             foreignKey: {
             allowNull: false
           }
         });
+        IMGresult.belongsTo(models.User, {
+            foreignKey: {
+            allowNull: false
+          }
+        })
       };
-      return Result;
+      return IMGresult;
 
   };
   

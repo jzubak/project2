@@ -10,9 +10,15 @@ module.exports = function(app) {
       res.json(dbUsers);
     });
   });
-  app.get("/api/result", function(req, res) {
-    db.Result.findAll({}).then(function(dbResults) {
-      res.json(dbResults);
+  app.get("/api/urlresults", function(req, res) {
+    db.URLresult.findAll({}).then(function(dbURLresults) {
+      res.json(dbURLresults);
+    });
+  });
+
+  app.get("/api/imgresults", function(req, res) {
+    db.IMGresult.findAll({}).then(function(dbIMGresults) {
+      res.json(dbIMGresults);
     });
   });
 
@@ -50,10 +56,17 @@ module.exports = function(app) {
     });
   });
 
-  app.post("/api/result", function(req, res) {
-    db.Result.create(req.body).then(function(dbResults) {
-      console.log(`${cyan}==> New Results Saved ${reset}`)
-      res.json(dbResults);
+  app.post("/api/urlresults", function(req, res) {
+    db.URLresult.create(req.body).then(function(dbURLresults) {
+      console.log(`${cyan}==> New Results URLs Saved ${reset}`)
+      res.json(dbURLresults);
+    });
+  });
+
+  app.post("/api/imgresults", function(req, res) {
+    db.IMGresult.create(req.body).then(function(dbIMGresults) {
+      console.log(`${cyan}==> New Results image URLs Saved ${reset}`)
+      res.json(dbIMGresults);
     });
   });
 
