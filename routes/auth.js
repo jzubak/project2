@@ -13,6 +13,9 @@ module.exports = function(app, passport) {
 
     app.get('/member', authController.member);
 
+    app.get('/quiz1', authController.quiz1);
+
+
     app.post('/signup', 
     passport.authenticate('local-signup', { failureRedirect: '/index' }),
     function(req, res) {

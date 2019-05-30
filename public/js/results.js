@@ -16,12 +16,26 @@ var quizId = getUrlParameter('quizId')
 console.log("quiz ID = " + quizId)
 var answerId = getUrlParameter('answerSetId')
 console.log("answer ID = " + answerId)
-var userName = getUrlParameter('userName')
-console.log("user Name = " + userName)
 
-$("#account").html(userName);
-$(".link").attr("href", `/member/?userId=${userId}`)
 
+var userId = getUrlParameter('userId');
+// var userName;
+        $.get("/api/user", function(req, res){
+            for(var i = 0; i < req.length; i++) {
+            if (parseInt(userId) === req[i].id) {
+            var userName = req[i].firstname
+                }
+            }
+        
+    // } else {
+    //     userName = getUrlParameter('userName')
+    // }
+    console.log("user ID = " + userId)
+    console.log("user name = " + userName)
+
+    
+    $("#account").html(userName);
+    $(".link").attr("href", `/member/?userId=${userId}`)
 
 var URLresult = {
     UserId : userId,
@@ -140,5 +154,5 @@ function postResults (url, img) {
     });
 
 }
-
+})
     
