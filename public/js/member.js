@@ -9,9 +9,27 @@ $(document).ready(function() {
     var userId = parseInt(getUrlParameter('userId'))
     console.log("user ID = " + userId)
 
+    $.get("/api/user", function(req, res){
+        for (var i = 0; i < req.length; i ++) {
+
+            if(parseInt(userId) === req[i].id) {
+                console.log("ITS A MATCH BABY!")
+                var firstname = req[i].firstname
+                var lastname = req[i].lastname
+
+                var message = $("<p>")
+                    message
+                    .addClass("greeting")
+                    .text(`${firstname} ${lastname}, welcome to the member's section`)
+                        $("#greetings").append(message)
+
+            }
+        }
+    })
+
     var newDiv = $("<div>")
         newDiv
-            .text("select a quiz you've taken")
+            .text("please select one of the quizzes you've previously taken")
             .attr("id", "dropdown")
             .append("<br>")
         $(".start").append(newDiv)
