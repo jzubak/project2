@@ -73,7 +73,7 @@ $(document).ready(function() {
             Answers: [
                 Answer1 = { Answer: "/assets/images/livingroomquiz/midCentury_rug.jpg", Value: 1},
                 Answer2 = { Answer: "/assets/images/livingroomquiz/bohemian_rug.jpg", Value: 2},
-                Answer3 = { Answer: "/assets/images/livingroomquiz/victorian_rug", Value: 3},
+                Answer3 = { Answer: "/assets/images/livingroomquiz/victorian_rug.jpg", Value: 3},
                 Answer4 = { Answer: "/assets/images/livingroomquiz/country_rug.jpg", Value: 4}
             ],
         },
