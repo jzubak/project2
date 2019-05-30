@@ -1,3 +1,12 @@
+.content{
+  min-height: calc(100vh - 148px)
+}
+
+.footer{
+  height: 100px;
+  background-color: #353132;
+}
+
 body{
   background-color: #353132;
 }
@@ -195,8 +204,6 @@ body{
 
 .h100px{
   height: 100px;
-  position: fixed;
-  bottom: 0;
 }
 
 .h100px-2{
