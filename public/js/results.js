@@ -71,7 +71,7 @@ function displayRes(terms) {
                 success: function (data) {
                     if (data.ok) {
                         console.log("data is ok")
-                        // console.log(data)
+                        console.log(data)
                         // console.log(data.count)
                         // $('#resultImages').empty();
                         if (data.count > 0) {
@@ -83,6 +83,8 @@ function displayRes(terms) {
                                 $("<img/>").attr("src", item.Images[0].url_170x135).appendTo("#resultImages").wrap(
                                     "<a href='" + item.url + "'></a>"
                                 );
+                                $("#resultImages").append(item.price+item.currency_code)
+                                $("#resultImages").append(item.tags[0]+item.tags[1]+)
                                 if (i % 4 == 3) {
                                     $('<br/>').appendTo('#resultImages');
                                 }
