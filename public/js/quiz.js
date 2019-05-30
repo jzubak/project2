@@ -11,8 +11,9 @@ $(document).ready(function() {
         console.log("user ID = " + userId)
         console.log("user name = " + userName)
     
-        $("#account").html(userName)
-    
+        $("#account").html(userName);
+        $(".link").attr("href", `/member/?userId=${userId}`)
+        
     var livingRoom = [
         question1 = {
             Question: "Pick the chair speaks to you the most:",

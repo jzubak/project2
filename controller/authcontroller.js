@@ -19,6 +19,12 @@ exports.quiz = function(req, res) {
  
 }
 
+exports.member = function(req, res) {
+    
+    res.render('member');
+ 
+}
+
 exports.results = function(req, res) {
     
     res.render('results');
