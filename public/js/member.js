@@ -112,3 +112,5 @@ $(document).ready(function() {
         })                               
     });
 });
+
+$(".linkquiz").attr("href", `/quiz/?userId=${userId}`)
