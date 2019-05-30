@@ -13,80 +13,83 @@
 <div id="body"></div>
 
 <!-- NAVBAR -->
+<div class="content">
+    <div class="backgroundyellow p-2 navbar">
+        <span>
+            <a href="#">
+                <img src="assets/images/logo(horizontal).png" class="full logo">
+                <img src="assets/images/icon.png" class="icon logo">
+            </a>
+        </span>
+        <div class="floatright regularfont eighteenpixelfont">
+            <a class="textgray pinkhover" href="#">
+                <div id="account">Sign up</div>
+            </a>
+        </div>
+    </div>
 
-<div class="backgroundyellow p-2 navbar">
-    <span>
-        <a href="#">
-            <img src="assets/images/logo(horizontal).png" class="full logo">
-            <img src="assets/images/icon.png" class="icon logo">
-        </a>
-    </span>
-    <div class="floatright regularfont eighteenpixelfont">
-        <a class="textgray pinkhover" href="#">
-            <div id="account">Sign up</div>
-        </a>
+    <!--QUIZ CONTAINER-->
+
+    <div class="container p-2 pb-5 my-5 mx-2 bordergray backgroundyellow mx-auto margin">
+        <div class="row w100">
+            <div class="col-12 d-flex align-items-baseline">
+                <img class="small floatleft d-flex align-items-end" src="assets/images/Icon.png">
+                <div id="roomname" class="floatleft twentypixelfont regularfont ml-2">Sign Up</div>
+            </div>
+        </div>
+        <form id="signup" name="signup" method="post" action="/signup">
+            <div class="row">
+                <div class="col-4 d-flex justify-content-end regularfont eighteenpixelfont">
+                    <label for="email">Email Address</label>
+                </div>
+                <div class="col-8">
+                    <input class="text w-75 bordergraythin" name="email" type="text" />
+                </div>
+            </div>
+            <div class="row mt-1">
+                <div class="col-4 d-flex justify-content-end regularfont eighteenpixelfont">
+                    <label for="firstname">First Name</label>
+                </div>
+                <div class="col-8">
+                    <input class="w75 bordergraythin" name="firstname" type="text" />
+                </div>
+            </div>
+            <div class="row mt-1">
+                <div class="col-4 d-flex justify-content-end regularfont eighteenpixelfont">
+                    <label for="lastname">Last Name</label>
+                </div>
+                <div class="col-8">
+                    <input class="w75 bordergraythin" name="lastname" type="text" />
+                </div>
+            </div>
+            <div class="row mt-1">
+                <div class="col-4 d-flex justify-content-end regularfont eighteenpixelfont">
+                    <label for="password">Password</label>
+                </div>
+                <div class="col-8">
+                    <input class="w75 bordergraythin" name="password" type="password" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 regularfont d-flex justify-content-center">
+                    <input class="btn regularfont eighteenpixelfont pinkhover" type="submit" value="Sign Up" />
+                </div>
+            </div>
+        </form>
     </div>
 </div>
 
-<!--QUIZ CONTAINER-->
 
-<div class="container p-2 pb-5 my-5 mx-2 bordergray backgroundyellow mx-auto margin">
-    <div class="row w100">
-        <div class="col-12 d-flex align-items-baseline">
-            <img class="small floatleft d-flex align-items-end" src="assets/images/Icon.png">
-            <div id="roomname" class="floatleft twentypixelfont regularfont ml-2">Sign Up</div>
-        </div>
-    </div>
-    <form id="signup" name="signup" method="post" action="/signup">
+    <!--FOOTER-->
+<div class="footer">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-4 d-flex justify-content-end regularfont eighteenpixelfont">
-                <label for="email">Email Address</label>
-            </div>
-            <div class="col-8">
-                <input class="text w-75 bordergraythin" name="email" type="text" />
-            </div>
-        </div>
-        <div class="row mt-1">
-            <div class="col-4 d-flex justify-content-end regularfont eighteenpixelfont">
-                <label for="firstname">First Name</label>
-            </div>
-            <div class="col-8">
-                <input class="w75 bordergraythin" name="firstname" type="text" />
-            </div>
-        </div>
-        <div class="row mt-1">
-            <div class="col-4 d-flex justify-content-end regularfont eighteenpixelfont">
-                <label for="lastname">Last Name</label>
-            </div>
-            <div class="col-8">
-                <input class="w75 bordergraythin" name="lastname" type="text" />
-            </div>
-        </div>
-        <div class="row mt-1">
-            <div class="col-4 d-flex justify-content-end regularfont eighteenpixelfont">
-                <label for="password">Password</label>
-            </div>
-            <div class="col-8">
-                <input class="w75 bordergraythin" name="password" type="password" />
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 regularfont d-flex justify-content-center">
-                <input class="btn regularfont eighteenpixelfont pinkhover" type="submit" value="Sign Up" />
-            </div>
-        </div>
-    </form>
-</div>
+            <div class="col-12 px-5 backgroundgray h100px pointer textgray">
 
-
-<!--FOOTER-->
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-12 px-5 backgroundgray h100px pointer textgray">
-
+            </div>
         </div>
     </div>
 </div>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="js/quiz.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/quiz.js"></script>
