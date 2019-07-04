@@ -2,7 +2,7 @@
 https://evening-wave-34109.herokuapp.com/
 
 <img width="846" alt="Screen Shot 2019-07-04 at 2 17 16 AM" src="https://user-images.githubusercontent.com/46004362/60643690-ea071780-9e01-11e9-8ec9-ad97b13bfcc3.png">
-Hygge At Home is a 'style-box' style app that allows our users to log in, take a short test, and discover the perfect furniture for their homes.  Hygge At Home utilizes the following technologies: MySQL, Sequelize, bCrypt, Passport.js, Express, Express Sessions, Node.js, and Handlebars.
+Hygge At Home is a 'style-box' style app that allows our users to log in, take a short test, and discover the perfect furniture for their homes.  Hygge At Home utilizes the following technologies: MySQL, Sequelize, bCrypt, Passport.js, Express, Express Sessions, Node.js, Handlebars, and the Etsy API.
 
 ---
 
@@ -24,7 +24,7 @@ At the end of the test the numeric values from the 8 answers are stored in anoth
 
 <img width="448" alt="Screen Shot 2019-07-04 at 2 31 31 AM" src="https://user-images.githubusercontent.com/46004362/60644393-fc825080-9e03-11e9-8413-629e6fe65e3f.png">
 
-At this point an API call is made to `Etsy` with the style selected from the test and we use jQuerey to display the results.
+At this point an API call is made to `Etsy` with the style selected from the test, and we use jQuerey to display the results.
 
 <img width="792" alt="Screen Shot 2019-07-04 at 2 35 19 AM" src="https://user-images.githubusercontent.com/46004362/60644566-83372d80-9e04-11e9-929d-1c8546322ab6.png">
 
