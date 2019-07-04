@@ -6,11 +6,11 @@ Hygge At Home is a 'style-box' style app that allows our users to log in, take a
 
 ---
 
-The experience begins when you select to Signin or Signup on the landing page.
+The experience begins when you select to `Signin` or `Signup` on the landing page.
 
 <img width="1141" alt="Screen Shot 2019-07-04 at 2 21 45 AM" src="https://user-images.githubusercontent.com/46004362/60643878-7addf300-9e02-11e9-8845-ce5f41a921ca.png">
 
-When the user enters their information into the fields and clicks signup, the password is encrypted using `bCrypt` and saved into our `Users` table.  This table comes into play later in our app when we need to assosciate results from the tests with a specific user, and for pulling that information up in our members section.
+When the user enters their information into the fields and clicks `signup` the password is encrypted using `bCrypt` and saved into our `Users` table.  This table comes into play later in our app when we need to save results from the tests for a specific user, and display that stored information in our members section.
 
 <img width="282" alt="Screen Shot 2019-07-04 at 2 20 47 AM" src="https://user-images.githubusercontent.com/46004362/60643826-54b85300-9e02-11e9-85ee-98379cdbd9a5.png">
 
