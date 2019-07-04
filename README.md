@@ -28,7 +28,7 @@ At this point an API call is made to `Etsy` with the style selected from the tes
 
 <img width="792" alt="Screen Shot 2019-07-04 at 2 35 19 AM" src="https://user-images.githubusercontent.com/46004362/60644566-83372d80-9e04-11e9-929d-1c8546322ab6.png">
 
-In addition to telling you the style we matched with you, 12 items with images, descriptions, and prices are displayed on the page.  Each one of these pictures is also a clickable link that will bring you to the Etsy product page.
+In addition to displaying your style, 12 items with images, descriptions, and prices are also shown.  Each one of these pictures is a clickable link that will bring you to the Etsy product page.
 
 <img width="905" alt="Screen Shot 2019-07-04 at 2 38 14 AM" src="https://user-images.githubusercontent.com/46004362/60644651-c2657e80-9e04-11e9-8deb-0acd6fde4fd8.png">
 
